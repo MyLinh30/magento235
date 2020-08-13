@@ -1,0 +1,45 @@
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+        <arguments>
+            <argument name="collections" xsi:type="array">
+                <item name="magenest_magemovie_listing_data_source" xsi:type="string">Magenest\Movie\Model\ResourceModel\MageMovie\Grid\Collection</item>
+                <item name="magenest_director_listing_data_source" xsi:type="string">Magenest\Movie\Model\ResourceModel\Director\Grid\Collection</item>
+                <item name="magenest_actor_listing_data_source" xsi:type="string">Magenest\Movie\Model\ResourceModel\Actor\Grid\Collection</item>
+            </argument>
+        </arguments>
+    </type>
+    <virtualType name="Magenest\Movie\Model\ResourceModel\MageMovie\Grid\Collection" type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
+        <arguments>
+            <argument name="mainTable" xsi:type="string">magenest_movie</argument>
+            <argument name="resourceModel" xsi:type="string">Magenest\Movie\Model\ResourceModel\MageMovie</argument>
+        </arguments>
+    </virtualType>
+    <virtualType name="Magenest\Movie\Model\ResourceModel\Director\Grid\Collection" type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
+        <arguments>
+            <argument name="mainTable" xsi:type="string">magenest_director</argument>
+            <argument name="resourceModel" xsi:type="string">Magenest\Movie\Model\ResourceModel\Director</argument>
+        </arguments>
+    </virtualType>
+    <virtualType name="Magenest\Movie\Model\ResourceModel\Actor\Grid\Collection" type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
+        <arguments>
+            <argument name="mainTable" xsi:type="string">magenest_actor</argument>
+            <argument name="resourceModel" xsi:type="string">Magenest\Movie\Model\ResourceModel\Actor</argument>
+        </arguments>
+    </virtualType>
+
+<!--    <type name="Magento\Checkout\Controller\Cart">-->
+<!--        <plugin name="Magenest_Movie::change"-->
+<!--                type="Magenest\Movie\Plugin\Checkout\Controller\Cart\Add" sortOrder="1" />-->
+<!--    </type>-->
+
+
+    <type name="Magento\Checkout\Model\Cart">
+        <plugin name="Magenest_Movie::add_child_to_cart" type="Magenest\Movie\Plugin\Checkout\Model\Cart" sortOrder="1" />
+    </type>
+    <type name="Magento\Framework\View\Element\UiComponent\DataProvider\Reporting">
+        <plugin name="sales_grid_collection" type="\Magenest\Movie\Model\Plugin\Sales\Order\Grid"/>
+    </type>
+
+
+
+</config>

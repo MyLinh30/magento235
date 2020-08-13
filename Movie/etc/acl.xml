@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation=
+        "urn:magento:framework:Acl/etc/acl.xsd">
+    <acl>
+        <resources>
+            <resource id="Magento_Backend::admin">
+
+                <resource id="Magenest_Movie::demo" title="Demo" sortOrder="50">
+                    <resource id="Magenest_Movie::demosection"
+                              title="Demo Section" sortOrder="60">
+                    </resource>
+                </resource>
+
+
+                <resource id="Magenest_Movie::magenest" title="Magenest" sortOrder="51">
+                    <resource id="Magenest_Movie::movies" title="Movie Movie" sortOrder="10">
+                        <resource id="Magenest_Movie::movie" title="Magenest_Movie" sortOrder="10"></resource>
+                        <resource id="Magenest_Movie::director" title="Magenest_Director" sortOrder="10"></resource>
+                        <resource id="Magenest_Movie::actor" title="Magenest_Actor" sortOrder="10"></resource>
+                    </resource>
+                </resource>
+                <resource id="Magento_Backend::stores">
+                    <resource id="Magento_Backend::stores_settings">
+                        <resource id="Magento_Config::config">
+                            <resource id="Magenest_Movie::config_movie" title="Magenest_Movie"></resource>
+                        </resource>
+                    </resource>
+                </resource>
+                <resource id="Magenest_Movie::testbackend" title="TestBackend" sortOrder="51">
+                    <resource id="Magenest_Movie::test" title="Test Backend" sortOrder="10">
+                        <resource id="Magenest_Movie::view" title="ViewLogs" sortOrder="10"></resource>
+                        <resource id="Magenest_Movie::queue" title="Queue_List" sortOrder="10"></resource>
+                        <resource id="Magenest_Movie::configurations" title="Configurations" sortOrder="10"></resource>
+                    </resource>
+                </resource>
+            </resource>
+        </resources>
+    </acl>
+</config>

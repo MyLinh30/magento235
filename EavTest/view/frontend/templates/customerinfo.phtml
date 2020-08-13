@@ -1,0 +1,24 @@
+<h2>Nào ta cùng xem thông tin mình nhe: Customer  Information</h2>
+<label>Avatar: </label></br>
+<img src="<?php echo $block->getFileUrl(); ?>" alt="Logo Image" width="200" height="200"/>
+<?php $customer = $block->getCustomer();?>
+    <div>
+	    <label>Name: </label><?php echo  $customer['name'] ?></br>
+    </div>
+	<div>
+		<label>Email: </label><?php echo $customer['email'] ?></br>
+	</div>
+	<div>
+		<label>Phone: </label><?php echo $customer['phone'] ?> </br>
+	</div>
+
+
+
+<!--	<div>-->
+<!--		<label>Avatar: </label></br>-->
+<!--		<img src="--><?php //echo $block->getFileUrl() ?><!--" alt="Logo Image">-->
+<!--		<img src="/pub/media/customer--><?php //echo $customer['url']?><!--" alt="Logo Avatar" />-->
+<!--	</div>-->
+
+
+

@@ -1,0 +1,75 @@
+<style>
+    .btn {
+        margin: auto;
+    }
+    #form_login {
+        margin-top: 30px;
+        width: 500px;
+    }
+</style>
+<div class="btn">
+    <button id="btn_open_modal" >Open Modal</button>
+    <button id="btn_magento_login_modal" value="">Open Magento Login Modal</button>
+    <button id="btn_customer_loin_modal" value="">Open Custom Login Modal</button>
+</div>
+
+<div id="form_login" style="background: #4cae4c" >
+    <form class="my_form" method="get" >
+        <fieldset id="fieldset" >
+            <label style="color: #000099">Username</label>
+            <input type="email"></br>
+            <label style="color: #000099">Password</label>
+            <input type="password">
+        </fieldset>
+    </form>
+</div>
+
+<!--<script>-->
+<!--    require(['jquery'],function ($){-->
+<!--        $('#btn_open_modal').click(function (){-->
+<!--            alert("Hello World")-->
+<!--        });-->
+<!--    });-->
+<!--</script>-->
+
+<script>
+    require([
+        'jquery',
+        'Magento_Ui/js/modal/alert',
+        'Magento_Ui/js/modal/modal',
+        'Magento_Ui/js/modal/prompt',
+    ], function($,alert,modal,prompt) { // Variable that represents the `alert` function
+        $('#btn_open_modal').click(function () {
+            alert({
+                title: $.mage.__('Hello World'),
+                content: $.mage.__('Hello'),
+                actions: {
+                    always: function () {
+                    }
+                }
+            });
+        });
+
+        var options = {
+            type: 'popup',
+            responsive: true,
+            innerScroll: true,
+            title: 'Magento Login Form',
+            buttons: [{
+                text: $.mage.__('Login'),
+                class: '',
+                click: function () {
+                    this.closeModal();
+                    $('#popup-modal').html(" ");
+                }
+            }]
+        };
+        var popup = modal(options, $('#form_login'));
+        $("#btn_magento_login_modal").on("click",function(){
+            $('#form_login').modal('openModal');
+        });
+    });
+</script>
+
+
+

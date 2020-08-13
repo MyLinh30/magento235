@@ -1,0 +1,73 @@
+<!--<style>-->
+<!--	table-->
+<!--	{-->
+<!--		font-family: arial, sans-serif;-->
+<!--		border-collapse: collapse;-->
+<!--		width: 100%;-->
+<!--		margin-top: 30px;-->
+<!--	}-->
+<!--	td, th-->
+<!--	{-->
+<!--		border: 1px solid #dddddd;-->
+<!--		text-align: left;-->
+<!--		padding: 8px;-->
+<!--	}-->
+<!--	tr:nth-child(even)-->
+<!--	{-->
+<!--		background-color: #dddddd;-->
+<!--	}-->
+<!--	.movie-name{width:30%}-->
+<!---->
+<!--</style>-->
+<!--<table>-->
+<!--	<tr>-->
+<!--		<th class="movie-id">Id</th>-->
+<!--		<th class="movie-name">Name</th>-->
+<!--		<th>Description</th>-->
+<!--		<th>Rating</th>-->
+<!--		<th>Director_ID</th>-->
+<!---->
+<!---->
+<!--	</tr>-->
+<!--	--><?php
+//        foreach ($block->getMovie() as $item){
+//            echo '<tr>
+//                    <td>'.$item->getMovieId().'</td>
+//                    <td>'.$item->getName().'</td>
+//                    <td>'.$item->getDescription().'</td>
+//                    <td>'.$item->getRating().'</td>
+//                    <td>'.$item ->getDirectorId().'</td>
+//                  </tr>';
+//        }
+//    ?>
+<!--</table>-->
+
+<?php
+$movies = $block->getMovieInfo();
+$columnName = array_keys($movies[0]);
+?>
+
+<table>
+	<thead style="background: greenyellow">
+	<tr>
+        <?php foreach ($columnName as $collumnKey=>$collumnValue) { ?>
+			<th style="border: 1px white solid;color: white;">
+                <?php echo($collumnValue)?>
+			</th>
+        <?php } ?>
+	</tr>
+	</thead>
+	<tbody>
+    <?php foreach ($movies as $movie) { ?>
+		<tr style="border-bottom: 1px black solid" >
+            <?php
+            $movieValue = array_values($movie);
+            foreach ($movieValue as $value) {
+                ?>
+				<td><?php echo($value) ?></td>
+
+            <?php } ?>
+		</tr>
+    <?php } ?>
+	</tbody>
+</table>

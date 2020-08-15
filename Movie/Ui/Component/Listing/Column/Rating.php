@@ -22,7 +22,7 @@ class Rating extends Column
                     if($i<$item['rating']){
                         $html .='<img src="https://previews.123rf.com/images/coolvectorstock/coolvectorstock1808/coolvectorstock180803063/106867388-star-vector-icon-isolated-on-transparent-background-star-concept.jpg" width="20" height="20">';
                     }else{
-                        $html.= '<img src="https://www.pinclipart.com/picdir/middle/76-761000_a-black-star-transparent-background-star-png-clipart.png" width="20" height="20">';
+                        $html.= '<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/Star_empty.svg/589px-Star_empty.svg.png" width="20" height="20">';
                     }
                     $i++;
                 }

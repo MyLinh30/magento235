@@ -7,7 +7,7 @@ define(['uiComponent'], function(Component) {
             this._super();
         },
         getText: function () {
-            return "Call the function here...";
+            return "Call the function here no no...";
         }
     });
 });

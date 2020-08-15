@@ -90,8 +90,9 @@
                 </item>
             </argument>
         </field>
-        <field name="director_id">
+        <field name="director_id" >
             <argument name="data" xsi:type="array">
+                <item name="options" xsi:type="object">Magenest\Movie\Model\MageMovie\Director\Options</item>
                 <item name="config" xsi:type="array">
                     <item name="componentType" xsi:type="string">field</item>
                     <item name="formElement" xsi:type="string">select</item>

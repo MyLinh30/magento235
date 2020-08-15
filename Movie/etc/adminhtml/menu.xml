@@ -55,14 +55,12 @@
             resource="Magenest_Movie::demo"/>
         <add
             id="Magenest_Movie::moviesection"
-            title="Request Report"
+            title="Request Report Today"
             module="Magenest_Movie"
             sortOrder="9"
-            action="magenest/report/index"
+            action="magenest/report/load"
             parent="Magenest_Movie::section"
             resource="Magenest_Movie::demosection"/>
-
-
 
     </menu>
 

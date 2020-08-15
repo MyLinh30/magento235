@@ -20,7 +20,7 @@
                        type="text" sortOrder="10" showInDefault="1"
                        showInWebsite="1" showInStore="1">
                     <label>Text Field</label>
-             <backend_model>Magenest\Movie\Model\Config\Backend\Custom</backend_model>
+<!--                <backend_model>Magenest\Movie\Model\Config\Backend\Custom</backend_model>-->
                 </field>
 
                 <field id="yes_no" translate="label"

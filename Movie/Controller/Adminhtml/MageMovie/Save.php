@@ -36,7 +36,7 @@ class Save extends \Magento\Backend\App\Action
 //                return;
 //            }
 //        }
-        $this->messageManager->addSuccess(__('Data saved!'));
+        $this->messageManager->addSuccess(__('Data movie saved!'));
         $this->_redirect('magenest/magemovie/index');
         return;
     }

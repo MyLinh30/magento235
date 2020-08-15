@@ -15,6 +15,7 @@ class RequestReport extends Template
     public function __construct(Template\Context $context,
                                 \Magento\Framework\Module\FullModuleList $fullModuleList,
                                 \Magento\Customer\Model\ResourceModel\Customer\Collection $customer,
+                                \Magento\Sales\Model\ResourceModel\Order\Collection $oders,
                                 \Magento\Catalog\Model\ResourceModel\Product\Collection $productCollection,
                                 \Magento\Sales\Model\ResourceModel\Order\Invoice\Collection $invoiceCollection,
                                 \Magento\Sales\Model\ResourceModel\Order\Creditmemo\Collection $creditmemoCollection,
@@ -26,6 +27,7 @@ class RequestReport extends Template
         $this->invoiceCollection= $invoiceCollection;
         $this->creditmemoCollection = $creditmemoCollection;
         $this->customer = $customer;
+        $this->orderCollection = $oders;
     }
 
     public function getAllModule(){
@@ -37,7 +39,8 @@ class RequestReport extends Template
         $num = 0;
         foreach ($all as $module){
             $str = substr($module, 0, 8);
-            if (strcmp($str, 'Magenest') == 0){
+            $str1 = substr($module,0,5);
+            if ((strcmp($str, 'Magenest') == 0) || (strcmp($str1, 'Packt') == 0) ){
                 $num ++;
             }
         }
@@ -45,6 +48,9 @@ class RequestReport extends Template
     }
     public function getNumberCustomer(){
         return $this->customer->count();
+    }
+    public function getNumberOrder(){
+        return $this->orderCollection->count();
     }
     public function getNumberProduct(){
         return $this->productCollection->count();

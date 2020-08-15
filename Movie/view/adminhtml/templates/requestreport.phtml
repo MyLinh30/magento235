@@ -1,5 +1,5 @@
 <h2>Reports Made Today</h2>
-<table  class="col-m-6 data-grid" style="width:300px">
+<table border="1" class="col-m-6 data-grid" style="width:500px;border-bottom:red;border-right: red;border-left: red;border-top: red;">
     <tr class="data-row">
         <td>All Module</td>
         <td><?php echo $block->getAllModule() ?></td>
@@ -16,23 +16,27 @@
         margin-right: 50px;
     }
 </style>
-<div class="distances">
+<table class="distances">
 
-</div>
-<table border="1" class="col-m-6 data-grid" style="border-color: red">
+</table>
+<table border="1" class="col-m-6 data-grid" style="width:500px;border-bottom:red;border-right: red;border-left: red;border-top: red;">
     <tr class="data-row">
         <td>Customers</td>
         <td><?php echo $block->getNumberCustomer() ?></td>
     </tr>
     <tr class="data-row _odd-row">
+        <td>Orders</td>
+        <td><?php echo $block->getNumberOrder() ?></td>
+    </tr>
+    <tr class="data-row">
         <td>Products</td>
         <td><?php echo $block->getNumberProduct()?></td>
     </tr>
-    <tr class="data-row">
+    <tr class="data-row _odd-row">
         <td>Invoices</td>
         <td><?php echo $block->getNumberInvoice() ?></td>
     </tr>
-    <tr class="data-row _odd-row">
+    <tr class="data-row">
         <td>Creditmemos</td>
         <td><?php echo $block->getNumberCreditmemo() ?></td>
     </tr>

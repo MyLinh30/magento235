@@ -139,7 +139,7 @@
             </item>
         </argument>
     </column>
-        <column name="director_id" >
+        <column name="director_id" class="Magenest\Movie\Ui\Component\Listing\Column\GetNameDirector" >
             <argument name="data" xsi:type="array">
                 <item name="config" xsi:type="array">
                     <item name="bodyTmpl" xsi:type="string">ui/grid/cells/html</item>
@@ -150,30 +150,40 @@
                             <item name="required-entry" xsi:type="boolean">true</item>
                         </item>
                     </item>
-                    <item name="label" xsi:type="string" translate="true">Director_ID</item>
+                    <item name="label" xsi:type="string" translate="true">Director Name</item>
                 </item>
             </argument>
         </column>
-        <column name="created_at" class="Magento\Ui\Component\Listing\Columns\Date">
+<!--        <column name="created_at" class="Magento\Ui\Component\Listing\Columns\Date">-->
+<!--            <argument name="data" xsi:type="array">-->
+<!--                <item name="config" xsi:type="array">-->
+<!--                    <item name="filter" xsi:type="string">dateRange</item>-->
+<!--                    <item name="component" xsi:type="string">Magento_Ui/js/grid/columns/date</item>-->
+<!--                    <item name="dataType" xsi:type="string">date</item>-->
+<!--                    <item name="label" xsi:type="string" translate="true">From</item>-->
+<!--                </item>-->
+<!--            </argument>-->
+<!--        </column>-->
+<!--        <column name="updated_at" class="Magento\Ui\Component\Listing\Columns\Date">-->
+<!--            <argument name="data" xsi:type="array">-->
+<!--                <item name="config" xsi:type="array">-->
+<!--                    <item name="filter" xsi:type="string">dateRange</item>-->
+<!--                    <item name="component" xsi:type="string">Magento_Ui/js/grid/columns/date</item>-->
+<!--                    <item name="dataType" xsi:type="string">date</item>-->
+<!--                    <item name="label" xsi:type="string" translate="true">To</item>-->
+<!--                </item>-->
+<!--            </argument>-->
+<!--        </column>-->
+        <actionsColumn name="actions" class="Magenest\Movie\Ui\Component\Listing\Column\Action">
             <argument name="data" xsi:type="array">
                 <item name="config" xsi:type="array">
-                    <item name="filter" xsi:type="string">dateRange</item>
-                    <item name="component" xsi:type="string">Magento_Ui/js/grid/columns/date</item>
-                    <item name="dataType" xsi:type="string">date</item>
-                    <item name="label" xsi:type="string" translate="true">From</item>
+                    <item name="resizeEnabled" xsi:type="boolean">false</item>
+                    <item name="resizeDefaultWidth" xsi:type="string">107</item>
+                    <item name="indexField" xsi:type="string">id</item>
                 </item>
             </argument>
-        </column>
-        <column name="updated_at" class="Magento\Ui\Component\Listing\Columns\Date">
-            <argument name="data" xsi:type="array">
-                <item name="config" xsi:type="array">
-                    <item name="filter" xsi:type="string">dateRange</item>
-                    <item name="component" xsi:type="string">Magento_Ui/js/grid/columns/date</item>
-                    <item name="dataType" xsi:type="string">date</item>
-                    <item name="label" xsi:type="string" translate="true">To</item>
-                </item>
-            </argument>
-        </column>
+        </actionsColumn>
+
     </columns>
 </listing>
 
